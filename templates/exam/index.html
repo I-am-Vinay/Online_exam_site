@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Examination System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .main-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    .intro-text {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    
+    .cta-buttons {
+      margin-top: 30px;
+    }
+    
+    .cta-btn {
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin: 10px;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      color: white;
+      text-decoration: none;
+    }
+    
+    .btn-student {
+      background: #2980b9;
+      border: 2px solid #2980b9;
+      color: white; /* Set text color to white */
+    }
+    
+    .btn-student:hover {
+      background: #3498db;
+      color: white; /* Ensure text color remains white on hover */
+    }
+    
+    .btn-teacher {
+      background: #219653;
+      border: 2px solid #219653;
+      color: white; /* Set text color to white */
+    }
+    
+    .btn-teacher:hover {
+      background: #27ae60;
+      color: white; /* Ensure text color remains white on hover */
+    }
+    
+    .btn-admin {
+      background: #a33025;
+      border: 2px solid #a33025;
+      color: white; /* Set text color to white */
+    }
+    
+    .btn-admin:hover {
+      background: #c0392b;
+      color: white; /* Ensure text color remains white on hover */
+    }
+    
+    .features-section {
+      padding: 80px 0;
+      background-color: #fff;
+    }
+    
+    .feature-box {
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      height: 100%;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #3498db;
+    }
+    
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .feature-desc {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: #3498db;
+    }
+
+   i{
+    color: rgb(216, 188, 24);
+   }
+   p{
+    color: white;
+   }
+  </style>
+</head>
+<body>
+  {% include "exam/navbar.html" %}
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="main-title">Online Examination System</h1>
+      <p class="subtitle">Attend your examinations securely and conveniently online</p>
+      <p class="intro-text">Our platform allows students to take exams, teachers to create and administer them, and administrators to oversee the entire process all in one place.</p>
+      
+      <div class="cta-buttons">
+        <a href="/student/studentsignup" class="btn cta-btn btn-student">
+          <i class="fas fa-user-graduate mr-2"></i> <p>Sign Up as Student</p>
+        </a>
+        <a href="/teacher/teachersignup" class="btn cta-btn btn-teacher" >
+          <i class="fas fa-chalkboard-teacher mr-2"></i> <p>Sign Up as Teacher</p>
+        </a>
+        <a href="/adminclick" class="btn cta-btn btn-admin">
+          <i class="fas fa-user-shield mr-2"></i> <p>Admin Login</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">Key Features</h2>
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="feature-title">Online Exams</h3>
+            <p class="feature-desc">Take exams from anywhere, anytime. Our platform provides a secure environment for all your examination needs.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Instant Results</h3>
+            <p class="feature-desc">Get your exam results instantly after completion. Track your progress with detailed performance analytics.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="feature-title">Secure Platform</h3>
+            <p class="feature-desc">Our examination system ensures the integrity of exams with various security measures to prevent cheating.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% include "exam/footer.html" %}
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
